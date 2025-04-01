@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DemoApi.Controllers
 {
     [ApiController]
-    [Route("api/artists")]
+    [Route("api/v1/artists")]
     public class ArtistsController : ControllerBase
     {
         [HttpGet]
