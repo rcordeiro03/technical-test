@@ -1,3 +1,5 @@
+using DemoApi.Repositories;
+using DemoApi.Repositories.Interfaces;
 
 namespace DemoApi
 {
@@ -10,6 +12,11 @@ namespace DemoApi
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddMemoryCache();
+
+            builder.Services.AddScoped<IGenresRepository, GenresRepository>();
+            builder.Services.AddScoped<IArtistsRepository, ArtistsRepository>();
+            builder.Services.AddScoped<ITracksRepository, TracksRepository>();
 
             var app = builder.Build();
 
